@@ -42,7 +42,7 @@ public static void Main(){
         Console.WriteLine("Application rejected. Maximum loan duration is 10 years.");
     }
     else{
-        
+
         System.Console.WriteLine("Application accepted.");
     }
 
@@ -53,6 +53,6 @@ public static void Main(){
         System.Console.WriteLine("Please enter valid input.");
     }
 }
-}
+}   
 }
 
