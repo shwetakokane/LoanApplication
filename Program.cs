@@ -1,12 +1,13 @@
 ﻿using System;
+
 namespace LoanApplication{
 class Program{
 
-public static void Main(string[] args){
+public static void Main(){
 
     try
     {
-  
+    
     Console.WriteLine("Enter the expected loan amount:");
     double loanAmount = Convert.ToInt32(Console.ReadLine());
 
@@ -16,38 +17,42 @@ public static void Main(string[] args){
     Console.WriteLine("Enter the loan duration:");
     double duration = Convert.ToInt32(Console.ReadLine());
 
-    
-    
-    if (annualIncome < 200000)
+     if (annualIncome < 200000)
     {
         Console.WriteLine("Application rejected. Insufficient annual income.");
     }
+
     else if (loanAmount < 100000)
     {
-        Console.WriteLine("Application rejected. Expected loan amount is below the crieteria.");
+         Console.WriteLine("Application rejected . Minimum loan amount to be sanctioned is 100000. ");
+        
     }
-    else if (loanAmount > 200000)
+
+    else if (loanAmount > 1000000)
     {
-        Console.WriteLine("Application rejected. Expected loan amount is above the crieteria.");
+         Console.WriteLine("Application rejected . Maximum loan amount to be sanctioned is 1000000. ");
+        
     }
-    else if (duration > 10)
-    {
-        Console.WriteLine("Application rejected. The loan duration should be less than 10 years.");
+    else if (duration < 1){
+         
+        Console.WriteLine("Application rejected. Minimum loan duration is 1 year.");
     }
-    else
-    {
+    else if (duration > 10){
+         
+        Console.WriteLine("Application rejected. Maximum loan duration is 10 years.");
+    }
+    else{
+        
         System.Console.WriteLine("Application accepted.");
     }
+
     }
-
-     catch(FormatException)
-    {
-        System.Console.WriteLine("Error : Non-numeric value entered.");
-    } 
-   
-
-   
-}
     
+    catch (FormatException)
+    {
+        System.Console.WriteLine("Please enter valid input.");
+    }
 }
 }
+}
+
